@@ -483,6 +483,10 @@ static NSString *const FBSDKExpectedChallengeKey = @"expected_login_challenge";
     [FBSDKInternalUtility dictionary:browserParams
                            setObject:redirectURL
                               forKey:@"redirect_uri"];
+      if (self.reauthenticate) {
+          browserParams[@"auth_type"] = @"reauthenticate";
+          NSLog(@"Reauthenticate");
+      }
     authURL = [FBSDKInternalUtility facebookURLWithHostPrefix:@"m."
                                                          path:@"/dialog/oauth"
                                               queryParameters:browserParams

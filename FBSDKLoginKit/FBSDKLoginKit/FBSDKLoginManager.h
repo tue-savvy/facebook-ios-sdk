@@ -120,6 +120,9 @@ typedef NS_ENUM(NSUInteger, FBSDKLoginBehavior)
  */
 @property (assign, nonatomic) FBSDKLoginBehavior loginBehavior;
 
+
+@property (nonatomic, assign) BOOL reauthenticate;
+
 /*!
  @deprecated use logInWithReadPermissions:fromViewController:handler: instead
  */
